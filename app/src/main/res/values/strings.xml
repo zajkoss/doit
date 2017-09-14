@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Today</string>
+    <string name="days_name">14 days</string>
+    <string name="edit_name">New task</string>
+    <string name="projects"><u>Projects</u></string>
+    <string name="task_no_location">This task doesn \'t have location</string>
+    <string name="task_done">Yeah!</string>
+    <string name="step_back"></string>
+    <string name="empty_project">The project name cannot be empty</string>
+    <string name="finish_project">You has finished your project!</string>
+    <string name="no_back">You will not come back</string>
+    <string name="notification_on_off">Notification</string>
+</resources>

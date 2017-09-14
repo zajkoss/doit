@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    android:paddingLeft="16dp">
+    <LinearLayout
+        android:id="@+id/location_bottomsheet"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:paddingLeft="8dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_location_on_black_18dp"/>
+
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="16dp"
+            android:textColor="@android:color/black"
+            android:textSize="14dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Location"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/edit_bottomsheet"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:orientation="horizontal">
+        <ImageView
+            android:paddingLeft="8dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_edit_black_18dp"/>
+
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="16dp"
+            android:textColor="@android:color/black"
+            android:textSize="14dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Edit"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/done_bottomsheet"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:paddingLeft="8dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_done_black_18dp"/>
+
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="16dp"
+            android:textColor="@android:color/black"
+            android:textSize="14dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Done!"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+  <LinearLayout
+      android:padding="12dp"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal">
+
+
+
+      <TextView
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="3"
+          android:textSize="16sp"
+          android:text="@string/notification_on_off"
+          android:textColor="@color/colorPrimaryDark"
+          android:textStyle="bold"/>
+
+       <Switch
+           android:checked="true"
+           android:id="@+id/switch_not"
+           android:layout_weight="1"
+           android:layout_width="0dp"
+           android:layout_height="wrap_content" />
+
+
+  </LinearLayout>
+    <TextView
+        android:paddingTop="8dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:paddingLeft="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Before task"/>
+    <LinearLayout
+
+        android:paddingLeft="24dp"
+        android:paddingTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioGroup
+            android:id="@+id/radio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+           <RadioButton
+               android:id="@+id/radio_5"
+               android:buttonTint="@color/colorPrimaryDark"
+               android:padding="16dp"
+
+               android:text="5 minutes"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content" />
+            <RadioButton
+                android:id="@+id/radio_15"
+                android:buttonTint="@color/colorPrimaryDark"
+                android:padding="16dp"
+                android:text="15 minutes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:id="@+id/radio_30"
+                android:buttonTint="@color/colorPrimaryDark"
+                android:padding="16dp"
+                android:text="30 minutes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+
+</LinearLayout>
