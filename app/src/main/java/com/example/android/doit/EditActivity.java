@@ -188,13 +188,16 @@ public class EditActivity extends AppCompatActivity implements LoaderManager.Loa
         Uri currentTaskUri = ContentUris.withAppendedId(CONTENT_URI,idToUpradge);
         Cursor crs = getContentResolver().query(currentTaskUri,null,null,null,null);
         crs.moveToNext();
-        int id_task =  crs.getInt(crs.getColumnIndex(_ID));
-        String task = crs.getString(crs.getColumnIndex(COLUMN_TASK_DESCRIPTION));
-        String time = crs.getString(crs.getColumnIndex(COLUMN_DATE));
-        long time_mili = Long.parseLong(time);
-        long before = preferences.getLong("com.example.android.doit.when",300000);
-        Log.i("Notification","" + id_task + " " + task +" " + time_mili + " " + before);
-        scheduleNotification(getNotification(task,time_mili),time_mili,id_task,before);
+        int do_all_day = crs.getInt(crs.getColumnIndex(COLUMN_ALLDAY));
+        if(do_all_day == 0 ) {
+            int id_task = crs.getInt(crs.getColumnIndex(_ID));
+            String task = crs.getString(crs.getColumnIndex(COLUMN_TASK_DESCRIPTION));
+            String time = crs.getString(crs.getColumnIndex(COLUMN_DATE));
+            long time_mili = Long.parseLong(time);
+            long before = preferences.getLong("com.example.android.doit.when", 300000);
+            Log.i("Notification", "" + id_task + " " + task + " " + time_mili + " " + before);
+            scheduleNotification(getNotification(task, time_mili), time_mili, id_task, before);
+        }
     }
 
 
@@ -204,13 +207,16 @@ public class EditActivity extends AppCompatActivity implements LoaderManager.Loa
     private void newNotification(){
         Cursor crs = getContentResolver().query(CONTENT_URI,null,null,null,_ID + " ASC");
         crs.moveToLast();
-        int id_task =  crs.getInt(crs.getColumnIndex(_ID));
-        String task = crs.getString(crs.getColumnIndex(COLUMN_TASK_DESCRIPTION));
-        String time = crs.getString(crs.getColumnIndex(COLUMN_DATE));
-        long time_mili = Long.parseLong(time);
-        long before = preferences.getLong("com.example.android.doit.when",300000);
-        Log.i("Notification","" + id_task + " " + task +" " + time_mili + " " + before);
-        scheduleNotification(getNotification(task,time_mili),time_mili,id_task,before);
+        int do_all_day = crs.getInt(crs.getColumnIndex(COLUMN_ALLDAY));
+        if(do_all_day == 0 ) {
+            int id_task = crs.getInt(crs.getColumnIndex(_ID));
+            String task = crs.getString(crs.getColumnIndex(COLUMN_TASK_DESCRIPTION));
+            String time = crs.getString(crs.getColumnIndex(COLUMN_DATE));
+            long time_mili = Long.parseLong(time);
+            long before = preferences.getLong("com.example.android.doit.when", 300000);
+            Log.i("Notification", "" + id_task + " " + task + " " + time_mili + " " + before);
+            scheduleNotification(getNotification(task, time_mili), time_mili, id_task, before);
+        }
     }
 
 
