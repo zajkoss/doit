@@ -68,7 +68,7 @@ import static com.example.android.doit.dataProjects.projectContract.projectEntry
 
 public class EditActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
     SharedPreferences preferences;
-    static public HashMap<Integer,PendingIntent> alarmManagerHashMap = new HashMap<>();
+
     private Spinner mSpinner;
     private Spinner mSpinnerProject;
     int i = 0;
@@ -219,16 +219,16 @@ public class EditActivity extends AppCompatActivity implements LoaderManager.Loa
         Intent notificationIntent = new Intent(this, NotificationPublisher.class);
         notificationIntent.putExtra(NotificationPublisher.NOTIFICATION_ID, id);
         notificationIntent.putExtra(NotificationPublisher.NOTIFICATION, notification);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, id, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         long futureInMillis = when - before;
         AlarmManager alarmManager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
         alarmManager.set(AlarmManager.RTC_WAKEUP, futureInMillis, pendingIntent);
-        alarmManagerHashMap.put(id,pendingIntent);
+
 
     }
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
-    private Notification getNotification(String content,long when) {
+    public Notification getNotification(String content,long when) {
         Intent i = new Intent(this,MainActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivities(this,0, new Intent[]{i},0);
         Notification.Builder builder = new Notification.Builder(this);

@@ -57,6 +57,7 @@ import static android.R.attr.delay;
 import static android.R.attr.id;
 import static android.icu.lang.UCharacter.GraphemeClusterBreak.L;
 import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
+import static android.os.Build.VERSION_CODES.N;
 import static android.view.View.Y;
 import static android.widget.Toast.LENGTH_SHORT;
 import static com.example.android.doit.data.TaskContract.*;
@@ -293,11 +294,19 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
 
                 Uri currentTaskUri = ContentUris.withAppendedId(CONTENT_URI,position_choose);
-                PendingIntent pi = EditActivity.alarmManagerHashMap.get(position_choose);
-                if(pi != null) {
-                    AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-                    alarmManager.cancel(pi);
-                }
+//                PendingIntent pi = EditActivity.alarmManagerHashMap.get(position_choose);
+//                if(pi != null) {
+//                    AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+//                    alarmManager.cancel(pi);
+//                }
+
+
+                Intent notificationIntent = new Intent(v.getContext(), NotificationPublisher.class);
+                notificationIntent.putExtra(NotificationPublisher.NOTIFICATION_ID, position_choose);
+                PendingIntent pi = PendingIntent.getBroadcast(v.getContext(), position_choose, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+                AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+                alarmManager.cancel(pi);
+
 
 
 
