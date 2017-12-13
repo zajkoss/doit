@@ -7,3 +7,10 @@ This is my first own Android app. In this application  you can add your task. Th
 Installation:
 -------------------------------------------------------------------------------------------
 Download file 'doit.app' on your Android device. This is the installation file.
+
+TODO List:
+-------------------------------------------------------------------------------------------
+- change view of task to be more interesting []
+- fix notifications []
+- add reset of day []
+- correct code readability []
